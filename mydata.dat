@@ -1,0 +1,11 @@
+BEGIN{OFS=",";cnt=0;s=0}
+/50000: && $3=="hr"/{
+print $1,$2,$3;
+cnt=cnt+1
+s=s+$4
+}
+END{print cnt
+print "----------------"
+print "Total:",s
+print "average:",s/cnt;
+}
